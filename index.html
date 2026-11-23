@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="my">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f8f3">
+<title>Hong Nyan & They Thuzar Hein | Wedding Invitation</title>
+<style>
+:root{--sage:#a9b98e;--sage2:#dce5d1;--deep:#667653;--cream:#fafbf7;--ink:#55594c;--muted:#858879;--line:#e4e8dc;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,"Noto Serif Myanmar","Myanmar Text",serif;line-height:1.75}
+button,input,select,textarea{font:inherit}a{color:inherit}
+.topbar{position:fixed;top:0;right:0;z-index:10;padding:15px 20px}.menu{border:0;background:#ffffffd9;border-radius:50%;width:38px;height:38px;font-size:18px;color:var(--deep);cursor:pointer;box-shadow:0 2px 15px #00000012}
+.hero{min-height:100svh;display:grid;place-items:center;padding:35px 18px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#fff 0,#f8faf4 48%,#edf1e6 100%)}
+.hero:before,.hero:after{content:"";position:absolute;width:260px;height:260px;border:1px solid #d8e1cc;border-radius:50%;opacity:.5}.hero:before{top:-130px;left:-110px}.hero:after{bottom:-150px;right:-100px}
+.envelope-wrap{width:min(420px,92vw);text-align:center;position:relative;z-index:1}.smalltop{font:10px Arial,sans-serif;letter-spacing:.27em;color:var(--deep);text-transform:uppercase}.envelope{height:270px;position:relative;margin:30px auto 22px;max-width:360px;cursor:pointer;filter:drop-shadow(0 16px 18px #5f6d4a22);perspective:800px}
+.env-back{position:absolute;inset:25px 12px 0;background:#c8d4b7;border-radius:5px}.env-front{position:absolute;bottom:0;left:12px;right:12px;height:78%;background:linear-gradient(145deg,#e4eadb,#c4d2b4);clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);border-radius:4px}
+.env-flap{position:absolute;top:25px;left:12px;right:12px;height:57%;background:#b5c49f;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .9s ease;z-index:3}
+.letter{position:absolute;left:28px;right:28px;bottom:20px;height:75%;background:#fffefa;z-index:2;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:15px;transition:transform .9s ease}
+.seal{position:absolute;z-index:4;left:50%;top:57%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:#9eaf83;color:#fff;border:2px solid #e9efdf;display:grid;place-items:center;font:18px Georgia}
+.envelope.open .env-flap{transform:rotateX(180deg);z-index:1}.envelope.open .letter{transform:translateY(-110px)}
+.letter .initials{font-size:30px;color:var(--deep);font-style:italic}.letter .names{font-size:14px;color:var(--deep)}
+.openhint{font:10px Arial,sans-serif;letter-spacing:.22em;color:var(--deep);margin-top:10px}
+.hero h1{font-size:clamp(34px,8vw,55px);font-weight:400;line-height:1.12;margin:10px 0;color:#778764}.hero .amp{font-style:italic;color:#b1bd9b}.hero .mm{font-size:16px;color:var(--muted)}
+.scrollcue{display:inline-block;margin-top:22px;color:var(--deep);text-decoration:none;font:10px Arial,sans-serif;letter-spacing:.2em;border-bottom:1px solid #b9c5a8;padding:5px 10px}
+nav{display:flex;justify-content:center;gap:clamp(10px,3vw,28px);flex-wrap:wrap;padding:13px 8px;background:#fffefaed;border-block:1px solid var(--line);position:sticky;top:0;z-index:8;backdrop-filter:blur(10px)}
+nav a{text-decoration:none;font:9px Arial,sans-serif;letter-spacing:.14em;color:var(--deep)}
+section{padding:76px 20px;scroll-margin-top:50px}.inner{width:min(850px,100%);margin:auto;text-align:center}.eyebrow{font:10px Arial,sans-serif;letter-spacing:.25em;color:var(--deep);text-transform:uppercase}.title{font-size:clamp(28px,5vw,42px);font-weight:400;margin:8px 0 20px;color:#7d896c}.lead{max-width:620px;margin:0 auto;color:var(--muted);font-size:14px}.orn{color:#a7b891;font-size:22px;margin:20px}
+.cover-art{position:relative;max-width:570px;margin:30px auto 0;min-height:470px}.photo{position:absolute;object-fit:cover;border:9px solid white;box-shadow:0 7px 22px #5260441c}.photo.one{width:43%;height:210px;left:4%;top:20px;transform:rotate(-7deg)}.photo.two{width:42%;height:235px;right:3%;top:95px;transform:rotate(6deg)}.photo.three{width:39%;height:170px;left:28%;bottom:0;transform:rotate(-3deg)}.badge-round{position:absolute;z-index:2;left:5%;bottom:65px;background:#9faf86;color:#fff;border:7px solid #fff;width:120px;height:120px;border-radius:50%;display:grid;place-items:center;font-style:italic;font-size:19px;line-height:1.2}
+.save{background:#f1f4eb}.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:540px;margin:28px auto}.time{padding:17px 5px;background:#fff;border:1px solid var(--line)}.time strong{display:block;font:clamp(24px,5vw,36px) Georgia;color:#8b9a76;font-weight:400}.time span{font:9px Arial,sans-serif;letter-spacing:.15em;color:var(--muted)}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px;text-align:left}.card{padding:22px;background:#fff;border:1px solid var(--line)}.card h3{font-size:17px;font-weight:400;color:var(--deep);margin:0 0 8px}.card p{font-size:13px;color:var(--muted);margin:4px 0}.btn{display:inline-block;border:1px solid #a9b894;padding:11px 22px;margin:12px 5px;text-decoration:none;background:#a9b894;color:#fff;font:10px Arial,sans-serif;letter-spacing:.14em;cursor:pointer}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center;text-align:left;margin-top:28px}.story img{width:100%;height:300px;object-fit:cover}.story p{font-size:13px;color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:28px}.gallery img{width:100%;height:250px;object-fit:cover;border:7px solid white;box-shadow:0 5px 18px #0000000b}
+.rsvp{background:#eef2e8}.form{max-width:520px;margin:25px auto 0;text-align:left}.form label{display:block;font-size:13px;margin:12px 0 5px}.form input,.form select,.form textarea{width:100%;padding:12px;border:1px solid #dce3d2;background:#fff;color:var(--ink);border-radius:3px}.form button{width:100%;margin:18px 0}.hint{font-size:11px;color:var(--muted);text-align:center}
+.wishes{max-width:520px;margin:25px auto}.footer{text-align:center;padding:40px 20px;background:#748362;color:#fff}.footer small{font:9px Arial,sans-serif;letter-spacing:.2em}
+@media(max-width:600px){section{padding:60px 17px}.info,.story{grid-template-columns:1fr}.story img{height:250px}.gallery img{height:180px}.cover-art{min-height:390px}.photo.one{height:170px}.photo.two{height:195px}.photo.three{height:145px}.badge-round{width:100px;height:100px;font-size:16px;bottom:50px}.envelope{height:245px}}
+</style>
+</head>
+<body>
+<div class="topbar"><button class="menu" onclick="document.getElementById('invitation').scrollIntoView({behavior:'smooth'})" aria-label="Go to invitation">☰</button></div>
+<header class="hero" id="top">
+ <div class="envelope-wrap">
+  <div class="smalltop">You are invited to our wedding</div>
+  <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open wedding invitation">
+   <div class="env-back"></div><div class="letter"><div class="initials">H <span style="color:#a9b894">&</span> T</div><div class="names">Hong Nyan · They Thuzar Hein</div><div style="font-size:10px;color:#9aa48c;margin-top:8px">14 · 02 · 2027</div></div>
+   <div class="env-flap"></div><div class="env-front"></div><div class="seal">H&T</div>
+  </div>
+  <div class="openhint" id="openhint">TAP THE ENVELOPE TO OPEN</div>
+  <div class="smalltop" style="margin-top:24px">Together with our families</div>
+  <h1>Hong Nyan <span class="amp">&</span><br>They Thuzar Hein</h1>
+  <div class="mm">မင်္ဂလာမောင်နှံ၏ ဖိတ်ကြားလွှာ</div>
+  <a class="scrollcue" href="#invitation">SCROLL TO EXPLORE ↓</a>
+ </div>
+</header>
+<nav><a href="#invitation">INVITATION</a><a href="#when">THE DAY</a><a href="#story">OUR STORY</a><a href="#gallery">GALLERY</a><a href="#rsvp">RSVP</a></nav>
+<section id="invitation"><div class="inner">
+ <div class="eyebrow">With joyful hearts · ဝမ်းမြောက်စွာဖြင့်</div><h2 class="title">We are getting married</h2>
+ <p class="lead">With the blessings of our families, we warmly invite you to celebrate the beginning of our forever.</p>
+ <p class="lead" style="margin-top:12px">မိသားစုနှစ်ဖက်၏ ကောင်းချီးမင်္ဂလာနှင့်အတူ ကျွန်ုပ်တို့၏ ဘဝခရီးသစ်စတင်ရာ မင်္ဂလာအခမ်းအနားသို့ ကြွရောက်ချီးမြှင့်ပေးပါရန် လေးစားစွာ ဖိတ်ကြားအပ်ပါသည်။</p>
+ <div class="cover-art">
+  <img class="photo one" src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=700&q=80" alt="Sample couple photo">
+  <img class="photo two" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80" alt="Sample wedding photo">
+  <img class="photo three" src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=700&q=80" alt="Sample wedding moment">
+  <div class="badge-round">Save<br>the<br>Date</div>
+ </div>
+ <div class="orn">❦ ✧ ❦</div><h2 class="title" style="font-style:italic">Hong Nyan & They Thuzar Hein</h2>
+</div></section>
+<section class="save" id="when"><div class="inner">
+ <div class="eyebrow">The beginning of forever · မင်္ဂလာရက်</div><h2 class="title">Wedding Day</h2>
+ <p class="lead" id="dateLabel">Sunday · 14 February 2027</p>
+ <div class="countdown"><div class="time"><strong id="days">--</strong><span>DAYS</span></div><div class="time"><strong id="hours">--</strong><span>HOURS</span></div><div class="time"><strong id="minutes">--</strong><span>MINUTES</span></div><div class="time"><strong id="seconds">--</strong><span>SECONDS</span></div></div>
+ <div class="info"><div class="card"><h3>Wedding Ceremony</h3><p>မင်္ဂလာအခမ်းအနား</p><p><b>Date:</b> 14 February 2027</p><p><b>Time:</b> To be announced</p></div><div class="card"><h3>Venue · မင်္ဂလာနေရာ</h3><p>ပင</p><p>လိပ်စာအပြည့်အစုံ ထပ်မံဖြည့်စွက်ရန်</p><p>မင်္ဂလာနေရာအသေးစိတ်ကို မကြာမီ ဖော်ပြပေးပါမည်။</p></div></div>
+ <a class="btn" href="https://maps.google.com/?q=%E1%80%95%E1%80%84" target="_blank" rel="noopener">OPEN MAP</a>
+</div></section>
+<section id="story"><div class="inner"><div class="eyebrow">Two hearts, one journey · အချစ်ခရီးလမ်း</div><h2 class="title">Our Story</h2>
+ <div class="story"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80" alt="Sample romantic photo"><div><h3 style="font-weight:400;color:#81906f;font-style:italic;font-size:25px">A beautiful beginning</h3><p>Every love story is beautiful, but ours is our favourite. We cannot wait to celebrate this special day with the people who mean the most to us.</p><p>ကျွန်ုပ်တို့၏ အမှတ်တရများနှင့် ချစ်ခြင်းမေတ္တာခရီးလမ်းကို မိသားစု၊ မိတ်ဆွေများနှင့်အတူ မျှဝေဂုဏ်ပြုလိုပါသည်။</p></div></div>
+ </div></section>
+<section id="gallery" style="background:#f5f7f1"><div class="inner"><div class="eyebrow">Captured moments · အမှတ်တရဓာတ်ပုံများ</div><h2 class="title">Our Memories</h2><p class="lead">Sample images are shown for now. Replace them with your own pre-wedding photos.</p>
+ <div class="gallery"><img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=800&q=80" alt="Wedding memory sample"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Wedding memory sample"><img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=800&q=80" alt="Wedding memory sample"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80" alt="Wedding memory sample"></div>
+ </div></section>
+<section id="rsvp"><div class="inner"><div class="eyebrow">Kindly reply · ပြန်လည်အကြောင်းကြားပေးပါ</div><h2 class="title">You are invited</h2><p class="lead">We would be delighted to have you with us. Please let us know if you can attend.</p><p class="lead">မင်္ဂလာအခမ်းအနားသို့ တက်ရောက်နိုင်ခြင်းရှိ၊ မရှိ ပြန်လည်ဖြေကြားပေးပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။</p>
+ <form class="form" id="rsvpForm"><label>Your full name · အမည်</label><input id="guestName" required placeholder="Name"><label>Will you attend? · တက်ရောက်နိုင်ပါသလား</label><select id="attend"><option>Joyfully accepts / တက်ရောက်ပါမည်</option><option>Regretfully declines / မတက်ရောက်နိုင်ပါ</option></select><label>Number of guests · လူဦးရေ</label><select id="guestCount"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select><label>Message · ဆုတောင်းစကား</label><textarea id="rsvpMessage" rows="3" placeholder="Your message..."></textarea><button class="btn" type="submit">SEND RSVP</button><div class="hint">RSVP will open your email app and prepare a message to dnnhshutter@gmail.com.</div></form>
+ </div></section>
+<section class="save" id="wishes"><div class="inner"><div class="eyebrow">A note for the couple · ဆုတောင်းစကား</div><h2 class="title">Leave us a wish</h2><p class="lead">Share your blessings and warm wishes with us.</p><form class="form" id="wishForm"><label>Your name · အမည်</label><input id="wishName" required><label>Your wishes · ဆုတောင်းစကား</label><textarea id="wishText" rows="4" required></textarea><button class="btn" type="submit">SEND YOUR WISH</button></form></div></section>
+<footer class="footer"><div style="font-size:23px;margin-bottom:10px">H <span style="color:#dce5d1">&</span> T</div><div>With love and gratitude</div><small>HONG NYAN & THEY THUZAR HEIN · 14 FEBRUARY 2027</small></footer>
+<script>
+const WEDDING_EMAIL="dnnhshutter@gmail.com";
+const WEDDING_DATE=new Date("2027-02-14T16:00:00");
+const envelope=document.getElementById("envelope");
+function openEnvelope(){envelope.classList.toggle("open");document.getElementById("openhint").textContent=envelope.classList.contains("open")?"INVITATION OPENED":"TAP THE ENVELOPE TO OPEN"}
+envelope.addEventListener("click",openEnvelope);envelope.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openEnvelope()}});
+function updateCountdown(){let d=Math.max(0,WEDDING_DATE.getTime()-Date.now());const v=[Math.floor(d/86400000),Math.floor(d%86400000/3600000),Math.floor(d%3600000/60000),Math.floor(d%60000/1000)];["days","hours","minutes","seconds"].forEach((id,i)=>document.getElementById(id).textContent=String(v[i]).padStart(2,"0"))}updateCountdown();setInterval(updateCountdown,1000);
+function mail(subject,body){location.href="mailto:"+WEDDING_EMAIL+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body)}
+document.getElementById("rsvpForm").addEventListener("submit",e=>{e.preventDefault();mail("Wedding RSVP - Hong Nyan & They Thuzar Hein",`Name: ${guestName.value}\nAttendance: ${attend.value}\nGuests: ${guestCount.value}\nMessage: ${rsvpMessage.value}`)});
+document.getElementById("wishForm").addEventListener("submit",e=>{e.preventDefault();mail("Wedding Wish - Hong Nyan & They Thuzar Hein",`From: ${wishName.value}\nWish: ${wishText.value}`)});
+</script>
+</body></html>
